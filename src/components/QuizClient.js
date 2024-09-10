@@ -90,7 +90,7 @@ const QuizClient = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-md mx-auto font-sans text-white"
+      className="w-full max-w-md mx-3 font-sans text-white"
     >
       <div className="text-center bg-black bg-opacity-70 p-8 rounded-lg shadow-neon"      >
         <AnimatePresence mode="wait">
@@ -103,7 +103,7 @@ const QuizClient = () => {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <h2 className="text-5xl md:text-6xl font-sans text-neon-green mb-8 text-shadow-neon">Photocard de Bad News Test</h2>
+              <h2 className="text-4xl md:text-6xl font-sans text-neon-green mb-8 text-shadow-neon">Photocard de Bad News Test</h2>
               <p className="mb-6 text-xl">¿Qué miembro te tocará en la Bad News era?</p>
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 8px #39ff14' }}

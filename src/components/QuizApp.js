@@ -101,7 +101,7 @@ const QuizApp = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-md mx-auto font-poppins text-gray-800"
+      className="w-full max-w-md mx-3 font-poppins text-gray-800"
     >
       <div className="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
         <AnimatePresence mode="wait">
