@@ -64,7 +64,7 @@ const QuizApp = () => {
 
   const shareResult = () => {
     if (result) {
-      const text = `¡Mi photocard de Bad News es ${result.name}! Descubre la tuya en [URL de tu sitio]`;
+      const text = `¡Mi photocard de Bad News es ${result.name}! Descubre la tuya en https://galaxies-quiz-bad-news.vercel.app/`;
       navigator.clipboard.writeText(text).then(() => {
         window.open('https://www.instagram.com', '_blank');
         alert('El texto ha sido copiado al portapapeles. Abrimos Instagram en una nueva pestaña. Por favor, pega el texto en una nueva historia o post.');
