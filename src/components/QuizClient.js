@@ -108,7 +108,7 @@ const QuizClient = () => {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 8px #39ff14' }}
                 whileTap={{ scale: 0.95 }}
-                className="neon-green text-black font-sans py-2 px-4 rounded-full inline-flex items-center"
+                className="bg-neon-green text-black font-sans py-2 px-4 rounded-full inline-flex items-center"
                 onClick={startQuiz}
               >
                 <ChevronRight className="mr-2" />
