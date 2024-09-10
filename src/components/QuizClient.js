@@ -204,7 +204,7 @@ const QuizClient = () => {
                   <Image 
                     src={`/img/${result.name.toLowerCase()}_2.jpg`} 
                     alt={result.name} 
-                    width={200} 
+                    width={188} 
                     height={300} 
                     className="rounded-lg shadow-neon"
                   />
@@ -217,6 +217,14 @@ const QuizClient = () => {
                 className="text-2xl font-sans text-neon-green mb-2"
               >
                 {result.name}
+              </motion.p>
+              <motion.p
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="mb-4 text-xl"
+              >
+                {result.description}
               </motion.p>
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
