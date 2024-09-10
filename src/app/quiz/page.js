@@ -1,11 +1,7 @@
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
-const QuizApp = dynamic(() => import('@/components/QuizApp'), { ssr: false })
+const QuizClient = dynamic(() => import('../../components/QuizClient'), { ssr: false });
 
 export default function QuizPage() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <QuizApp />
-    </main>
-  )
+  return <QuizClient />;
 }

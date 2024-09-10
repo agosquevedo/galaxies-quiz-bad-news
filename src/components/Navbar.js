@@ -10,7 +10,6 @@ export default function Navbar() {
             <div>
               <Link href="/" className="flex items-center py-4 px-2">
                 <Image src="/logo.png" alt="Logo" width={50} height={50} className="mr-2" />
-                <span className="font-semibold text-gray-500 text-lg">Bad News</span>
               </Link>
             </div>
           </div>

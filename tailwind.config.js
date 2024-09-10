@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,20 +7,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'teal': {
-          500: '#4fd1c5',
-          600: '#38b2ac',
-        },
-        'gray': {
-          100: '#f7fafc',
-          300: '#e2e8f0',
-          800: '#2d3748',
-        },
+        'dark-turquoise': '#0f4c5c',
+        'neon-blue': '#45e0e8',
+        'neon-green': '#1985e7',
+        'neon-white': '#efffff',
+        'neon-purple': '#bffffe',
+        'purple': '#1985e7',
+        'grey': '#1985e7',
+        'green': '1985e7',
       },
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'], // 'Inter' como sans-serif general
+        serif: ['Playfair Display', 'serif'],
+        nerko: ['Nerko One', 'cursive'], // Si 'Nerko One' es una fuente disponible en Google Fonts
+      },
+      backgroundImage: {
+        'graffiti-wall': "url('/images/graffiti-wall.jpg')",
+      },
+      boxShadow: {
+        neon: '0 0 5px #00ff8a, 0 0 20px #0094ff',
+      },
+      textShadow: {
+        neon: '0 0 5px #00ff8a, 0 0 20px #0094ff',
       },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-shadow-neon': {
+          textShadow: '0 0 5px #39ff14, 0 0 20px #0094ff',
+        },
+      };
+      addUtilities(newUtilities);
+    }
+  ],
+};

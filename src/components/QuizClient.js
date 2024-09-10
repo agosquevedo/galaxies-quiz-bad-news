@@ -8,7 +8,7 @@ import { shuffle } from '@/utils';
 import { members } from '@/data/members';
 import { questions, memberAnswers } from '@/data/questions';
 
-const QuizApp = () => {
+const QuizClient = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [result, setResult] = useState(null);
@@ -47,19 +47,7 @@ const QuizApp = () => {
       }
     });
 
-    const personalizedMessages = {
-      'Juanchi': '¡Felicidades! Eres tan versátil como Juanchi. ¿Listo para improvisar en el escenario?',
-      'Giu': '¡Eres un visual como Giu! Prepárate para deslumbrar con tu encanto natural.',
-      'Emi': '¡Tienes el espíritu de Emi! Lista para conquistar el escenario con tus pasos de baile.',
-      'Stefi': '¡Eres tan ocurrente como Stefi! ¿Ya tienes lista tu camiseta de Boca para The Boyz?',
-      'Val': '¡Multitalentosa como Val! Main rapper, main vocal, ¿hay algo que no puedas hacer?',
-      'Agos': '¡Tienes la energía de Agos! Lista para brillar en todos los aspectos del K-pop.'
-    };
-
-    setResult({
-      ...resultMember,
-      message: personalizedMessages[resultMember.name]
-    });
+    setResult(resultMember);
   };
 
   const shareResult = () => {
@@ -96,14 +84,15 @@ const QuizApp = () => {
   };
 
   return (
+    <div className="flex items-center justify-center min-h-screen bg-black">
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full max-w-md mx-auto font-poppins text-gray-800"
+      className="w-full max-w-md mx-auto font-sans text-white"
     >
-      <div className="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
+      <div className="text-center bg-black bg-opacity-70 p-8 rounded-lg shadow-neon"      >
         <AnimatePresence mode="wait">
           {!quizStarted ? (
             <motion.div
@@ -114,15 +103,16 @@ const QuizApp = () => {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Bad News Photocard Quiz</h2>
-              <p className="mb-6">¿Descubre qué miembro de Bad News eres?</p>
+              <h2 className="text-5xl md:text-6xl font-sans text-neon-green mb-8 text-shadow-neon">Photocard de Bad News Test</h2>
+              <p className="mb-6 text-xl">¿Qué miembro te tocará en la Bad News era?</p>
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, boxShadow: '0 0 8px #39ff14' }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-teal-500 text-white font-bold py-2 px-4 rounded-full inline-flex items-center"
+                className="neon-green text-black font-sans py-2 px-4 rounded-full inline-flex items-center"
                 onClick={startQuiz}
               >
-                Comenzar Quiz <ChevronRight className="ml-2" />
+                <ChevronRight className="mr-2" />
+                Comenzar Quiz
               </motion.button>
             </motion.div>
           ) : !result ? (
@@ -134,8 +124,8 @@ const QuizApp = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="flex items-center justify-center mb-6">
-                <Camera className="h-10 w-10 text-teal-500 mr-2" />
-                <h2 className="text-3xl font-bold text-gray-800">Pregunta {currentQuestion + 1}</h2>
+                <Camera className="h-10 w-10 text-neon-green mr-2" />
+                <h2 className="text-3xl font-sans text-neon-green">Pregunta {currentQuestion + 1}</h2>
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -148,7 +138,7 @@ const QuizApp = () => {
                   alt={`Question ${currentQuestion + 1}`} 
                   width={400} 
                   height={300} 
-                  className="rounded-lg shadow-md"
+                  className="rounded-lg shadow-neon"
                 />
               </motion.div>
               <motion.p
@@ -166,9 +156,9 @@ const QuizApp = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 + index * 0.1 }}
-                    whileHover={{ scale: 1.03 }}
+                    whileHover={{ scale: 1.03, boxShadow: '0 0 8px #39ff14' }}
                     whileTap={{ scale: 0.97 }}
-                    className="w-full py-3 px-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition duration-300"
+                    className="w-full py-3 px-4 bg-neon-purple text-black rounded-lg hover:bg-neon-green transition duration-300"
                     onClick={() => handleAnswer(option)}
                   >
                     {option}
@@ -188,7 +178,7 @@ const QuizApp = () => {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
-                className="text-2xl font-bold mb-4"
+                className="text-3xl font-sans text-neon-green mb-4"
               >
                 ¡Tu resultado!
               </motion.h3>
@@ -203,7 +193,7 @@ const QuizApp = () => {
                     alt={result.name} 
                     width={200} 
                     height={300} 
-                    className="rounded-lg shadow-md"
+                    className="rounded-lg shadow-neon"
                   />
                 </motion.div>
                 <motion.div
@@ -216,7 +206,7 @@ const QuizApp = () => {
                     alt={result.name} 
                     width={200} 
                     height={300} 
-                    className="rounded-lg shadow-md"
+                    className="rounded-lg shadow-neon"
                   />
                 </motion.div>
               </div>
@@ -224,7 +214,7 @@ const QuizApp = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="text-xl font-semibold mb-2"
+                className="text-2xl font-sans text-neon-green mb-2"
               >
                 {result.name}
               </motion.p>
@@ -232,7 +222,7 @@ const QuizApp = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1 }}
-                className="mb-4"
+                className="mb-4 text-xl"
               >
                 {result.message}
               </motion.p>
@@ -254,13 +244,13 @@ const QuizApp = () => {
                   type="text" 
                   value="@thenewgalaxies" 
                   readOnly 
-                  className="bg-gray-100 border border-gray-300 rounded-l-lg py-2 px-4"
+                  className="bg-gray-800 border border-neon-green rounded-l-lg py-2 px-4 text-white"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={copyInstagram}
-                  className="bg-pink-500 text-white rounded-r-lg p-2 hover:bg-blue-600"
+                  className="bg-neon-green text-black rounded-r-lg p-2 hover:neon-green"
                 >
                   {copied ? 'Copiado!' : <Copy size={20} />}
                 </motion.button>
@@ -272,8 +262,8 @@ const QuizApp = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={shareResult}
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white opacity-100 font-bold py-2 px-4 rounded-full inline-flex items-center hover:opacity-90 transition duration-300"
-                >
+                className="bg-gradient-to-r from-neon-blue to-neon-green text-black font-sans py-2 px-4 rounded-full inline-flex items-center hover:from-neon-green hover:to-neon-blue transition duration-300 mb-4"
+              >
                 <Instagram className="mr-2" />
                 Copiar y abrir Instagram
               </motion.button>
@@ -284,7 +274,7 @@ const QuizApp = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={restartQuiz}
-                className="mt-4 bg-teal-500 text-white font-bold py-2 px-4 rounded-full inline-flex items-center hover:bg-teal-600 transition duration-300"
+                className="bg-neon-white text-black font-sans py-2 px-4 rounded-full inline-flex items-center hover:bg-custom-neon-light transition duration-300"
               >
                 <RefreshCw className="mr-2" />
                 Hacer el test de nuevo
@@ -294,7 +284,8 @@ const QuizApp = () => {
         </AnimatePresence>
       </div>
     </motion.div>
+    </div>
   );
 };
 
-export default QuizApp;
+export default QuizClient;
