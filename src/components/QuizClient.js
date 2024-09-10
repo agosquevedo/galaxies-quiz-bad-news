@@ -103,7 +103,7 @@ const QuizClient = () => {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <h2 className="text-4xl md:text-6xl font-sans text-neon-green mb-8 text-shadow-neon">Photocard de Bad News Test</h2>
+              <h2 className="text-4xl md:text-6xl font-sans text-bg-neon-green mb-8 text-shadow-neon">Photocard de Bad News Test</h2>
               <p className="mb-6 text-xl">¿Qué miembro te tocará en la Bad News era?</p>
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 0 8px #39ff14' }}
