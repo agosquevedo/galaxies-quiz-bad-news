@@ -100,7 +100,7 @@ const QuizApp = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className="w-full max-w-md mx-3 font-poppins text-gray-800"
     >
       <div className="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
@@ -111,7 +111,7 @@ const QuizApp = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
               className="text-center"
             >
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Bad News Photocard Quiz</h2>
@@ -131,7 +131,7 @@ const QuizApp = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
             >
               <div className="flex items-center justify-center mb-6">
                 <Camera className="h-10 w-10 text-teal-500 mr-2" />
@@ -140,7 +140,7 @@ const QuizApp = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.3 }}
                 className="mb-6"
               >
                 <Image 
@@ -154,7 +154,7 @@ const QuizApp = () => {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: 0.3 }}
                 className="mb-4 text-xl"
               >
                 {questions[currentQuestion].question}
@@ -165,7 +165,7 @@ const QuizApp = () => {
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 + index * 0.1 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     className="w-full py-3 px-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition duration-300"
@@ -181,7 +181,7 @@ const QuizApp = () => {
               key="result"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
               className="text-center"
             >
               <motion.h3
@@ -196,7 +196,7 @@ const QuizApp = () => {
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.3 }}
                 >
                   <Image 
                     src={`/img/${result.name.toLowerCase()}_1.jpg`} 
@@ -223,7 +223,7 @@ const QuizApp = () => {
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.3 }}
                 className="text-xl font-semibold mb-2"
               >
                 {result.name}
@@ -247,7 +247,7 @@ const QuizApp = () => {
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.4 }}
+                transition={{ delay: 0.3 }}
                 className="flex justify-center items-center mb-4"
               >
                 <input 
@@ -280,7 +280,7 @@ const QuizApp = () => {
               <motion.button
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1.8 }}
+                transition={{ delay: 0.3 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={restartQuiz}

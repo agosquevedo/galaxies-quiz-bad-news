@@ -73,7 +73,7 @@ export const questions = [
       'Volar, para ver la ciudad desde arriba y llegar rápido a los ensayos',
       'Teletransporte, para no llegar tarde nunca más (o sí)',
       'Mover las cosas con la mente y leer pensamientos, doble poder',
-      'Telequinesis, para mover el micrófono sin usar las manos'
+      'Telequinesis, para mover las cosas sin usar las manos'
     ]
   },
   {
