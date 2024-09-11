@@ -5,9 +5,9 @@ export const questions = [
       'Vocalista y rapero, ¡lo mejor de ambos mundos!',
       'Visual, porque soy un 10/10 y lo saben',
       'Bailarín central, para mostrar mis grandiosos pasos',
-      'Rapero con alma de vocalista, ¿por qué elegir?',
+      'Rapero, ¿por qué no te hago unos versos?',
       'Main rapper, main vocal y main visual, ¿se puede todo?',
-      'El multifacético que sorprende con rap y canto'
+      'El multifacético que sorprende con lo que venga'
     ]
   },
   {
@@ -25,7 +25,7 @@ export const questions = [
     question: 'Si pudieras adoptar una mascota exótica, ¿cuál elegirías?',
     options: [
       'Un castor, para construir mi propio escenario',
-      'Un panda, porque son tan lindos y tiernos como yo',
+      'Un gato, porque son tan lindos y tiernos como yo',
       'Un leopardo, aunque pueda matarme, ¡son tan tiernos!',
       'Una nutria, porque son adorables y nadan mejor que yo',
       'Un panda, pero de esos negros y blancos, ¿hay de otro tipo?',
@@ -50,7 +50,7 @@ export const questions = [
       'Papas de batata, ¿se dice así? Esas que son como papas fritas pero de batata',
       'Las Twistos son el MEJOR SNACK, peleo mano a mano o 1v1 en LoL por defenderlas',
       'Las Saladix, no acepto discusión',
-      'Los Twistos, porque un snack tan top merece alguien tan top como yo',
+      'Los conitos 3D, porque un snack tan top merece alguien tan top como yo',
       'Papas fritas en todos sus modelos, soy una amante de la papa'
     ]
   },
